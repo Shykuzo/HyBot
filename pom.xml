@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>fr.hytaria_network.hybot</groupId>
+  <artifactId>HyBot</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+  
+  <name>HyBot</name>
+  <description>Private Discord Bot of Hytaria</description>
+  <url>https://github.com/HytariaNetwork/HyBot</url>
+  
+  <organization>
+    <name>Hytaria Network</name>
+    <url>https://github.com/HytariaNetwork</url>
+  </organization>
+  
+  <developers>
+    <developer>
+      <url>https://github.com/Shykuzo</url>
+      <id>shykuzo</id>
+      <name>Shykuzo</name>
+    </developer>
+  </developers>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    
+    <commit.version>${git.branch.name}-${git.commit.last.sha1_short}</commit.version>
+    <plugin.version>${project.version} (git ${commit.version})</plugin.version>
+  </properties>
+  
+  <repositories>
+    <repository>
+      <id>mrcubee-public</id>
+      <url>https://nexus.mrcubee.net/repository/minecraft/</url>
+    </repository>
+    
+    <repository>
+      <id>dv8tion</id>
+      <name>m2-dv8tion</name>
+      <url>https://m2.dv8tion.net/releases</url>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot-api</artifactId>
+      <version>1.18.2-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>fr.mrcubee.minecraft.library</groupId>
+      <artifactId>plugin-annotation</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>net.dv8tion</groupId>
+      <artifactId>JDA</artifactId>
+      <version>5.0.0-alpha.13</version>
+    </dependency>
+  </dependencies>
+  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>mrcubee-public</id>
+      <url>https://nexus.mrcubee.net/repository/minecraft/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+  
+  <build>
+    <defaultGoal>clean package</defaultGoal>
+    <finalName>${project.artifactId}-noShade</finalName>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+      </plugin>
+      <plugin>
+        <groupId>fr.mrcubee.maven</groupId>
+        <artifactId>gitplugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <phase>initialize</phase>
+            <goals>
+              <goal>parse</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.2</version>
+        <configuration>
+          <finalName>${project.artifactId}</finalName>
+          <filters>
+            <filter>
+              <artifact>*:*</artifact>
+              <excludes>
+                <exclude>META-INF/*.MF</exclude>
+                <exclude>META-INF/*.SF</exclude>
+                <exclude>META-INF/*.DSA</exclude>
+                <exclude>META-INF/*.RSA</exclude>
+                <exclude>META-INF/LICENSE</exclude>
+                <exclude>LICENSE</exclude>
+              </excludes>
+            </filter>
+          </filters>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>

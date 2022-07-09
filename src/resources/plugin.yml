@@ -1,0 +1,8 @@
+main: fr.hytaria_network.hybot.Main
+
+name: ${project.name}
+description: ${project.description}
+version: ${plugin.version}
+
+author: Shykuzo
+website: ${project.url}

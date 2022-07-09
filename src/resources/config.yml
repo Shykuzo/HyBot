@@ -1,0 +1,17 @@
+
+GLOBAL:
+   PREFIX:
+      PREFIX: "&e&lHytaria &6&l×"
+      ERROR_PREFIX: "&4&l(!)"
+      
+   WEBSITE: "www.hytaria.fr"
+
+   # ---------------------------------------- #
+
+DISCORD:
+   PREFIX: "!"
+   STATUS: "ONLINE"
+   
+   ACTIVITY:
+      TYPE: "WATCHING"
+      MESSAGE: "{DISCORD_PREFIX}help | {WEBSITE}"

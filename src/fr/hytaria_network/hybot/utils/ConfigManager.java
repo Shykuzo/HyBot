@@ -81,7 +81,7 @@ public class ConfigManager {
 		}
 	}
 	
-	public Activity getDiscordActivityType() throws Exception {
+	public Activity getDiscordActivity() throws Exception {
 		switch(discordActivityType) {
 			case "PLAYING":
 				return Activity.playing(getDiscordActivityMessage());
@@ -95,6 +95,10 @@ public class ConfigManager {
 			default:
 				throw new Exception("Invalid Activity");
 		}
+	}
+	
+	public String getDiscordActivityType() {
+		return discordActivityType;
 	}
 	
 	public String getDiscordActivityMessage() {

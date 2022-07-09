@@ -9,7 +9,7 @@ GLOBAL:
    # ---------------------------------------- #
 
 DISCORD:
-   TOKEN: ""
+   TOKEN: 
    
    PREFIX: "."
    STATUS: "ONLINE"

@@ -22,7 +22,7 @@ public class ConfigManager {
 			// ----- DISCORD ----- \\
 
 	@Config(path = "DISCORD.TOKEN", color = false)
-	private String discordToken = "";
+	private String discordToken = null;
 	
 	@Config(path = "DISCORD.PREFIX", color = false)
 	private String discordPrefix = ".";

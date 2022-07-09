@@ -11,7 +11,7 @@ GLOBAL:
 DISCORD:
    TOKEN: ""
    
-   PREFIX: "!"
+   PREFIX: "."
    STATUS: "ONLINE"
    
    ACTIVITY:

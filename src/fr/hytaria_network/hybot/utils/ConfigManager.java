@@ -1,5 +1,6 @@
 package fr.hytaria_network.hybot.utils;
 
+import fr.hytaria_network.hybot.Main;
 import fr.mrcubee.annotation.spigot.config.Config;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -77,7 +78,7 @@ public class ConfigManager {
 				return OnlineStatus.INVISIBLE;
 				
 			default:
-				throw new Exception("Invalid Statut");
+				throw new Exception("Invalid Status");
 		}
 	}
 	
@@ -105,6 +106,12 @@ public class ConfigManager {
 		return discordActivityMessage
 				.replace("{DISCORD_PREFIX}", getDiscordPrefix())
 				.replace("{WEBSITE}", getWebsite());
+	}
+	
+			// ----- EMOTE ----- \\
+	
+	public String getDiscordEmote(String PATH) {
+		return Main.getInstance().getConfig().getString(String.format("EMOTE.", PATH));
 	}
 	
 }

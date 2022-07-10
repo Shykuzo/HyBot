@@ -18,5 +18,27 @@ DISCORD:
       TYPE: "WATCHING"
       MESSAGE: "{DISCORD_PREFIX}help | {WEBSITE}"
       
+   # ---------------------------------------- #
+
+CHANNEL:
+   NAME:
+   
+         # ---- CATEGORY : LOGS ---- #
+   
+      LOGS_GLOBAL: "📄┃ɢlobal"
+      LOGS_CHAT: "📄┃ᴄhat"
+      LOGS_SERVEUR: "📄┃serveur"
+      LOGS_MODERATION: "📄┃ᴍodération"
+      LOGS_DEVELOPPEMENT: "📄┃ᴅéveloppement"
+   ID:
+   
+         # ---- CATEGORY : LOGS ---- #
+         
+      LOGS_GLOBAL: 949276801350393897
+      LOGS_CHAT: 984410313879322644
+      LOGS_SERVEUR: 995654241081364492
+      LOGS_MODERATION: 946799695651549205
+      LOGS_DEVELOPPEMENT: 984410365985193996
+
 EMOTE:
    CUSTOM_CHAT: "<:chat:949406454266339398>"

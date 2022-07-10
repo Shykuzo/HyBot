@@ -121,10 +121,20 @@ public class ConfigManager {
 				.replace("{WEBSITE}", getWebsite());
 	}
 	
+			// ----- CHANNEL ----- \\
+	
+	public String getChannelName(String PATH) {
+		return Main.getInstance().getConfig().getString(String.format("CHANNEL.NAME.%s", PATH));
+	}
+	
+	public long getChannelID(String PATH) {
+		return Main.getInstance().getConfig().getLong(String.format("CHANNEL.ID.%s", PATH));
+	}
+	
 			// ----- EMOTE ----- \\
 	
 	public String getDiscordEmote(String PATH) {
-		return Main.getInstance().getConfig().getString(String.format("EMOTE.", PATH));
+		return Main.getInstance().getConfig().getString(String.format("EMOTE.%s", PATH));
 	}
 	
 }

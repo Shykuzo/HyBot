@@ -1,11 +1,16 @@
 package fr.hytaria_network.hybot.utils;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import fr.hytaria_network.hybot.Main;
 import fr.mrcubee.annotation.spigot.config.Config;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 
 public class ConfigManager {
+	
+	private DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm:ss");
 	
 	// ---------------------------------------- \\
 	
@@ -38,6 +43,14 @@ public class ConfigManager {
 	private String discordActivityMessage = "{DISCORD_PREFIX}help | {WEBSITE}";
 	
 	// ---------------------------------------- \\
+	
+	public DateTimeFormatter getDateFormat() {
+		return dateFormat;
+	}
+	
+	public String getFormattedDate() {
+		return getDateFormat().format(LocalDateTime.now());
+	}
 	
 			// ----- GLOBAL ----- \\
 	
